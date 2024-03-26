@@ -75,6 +75,13 @@ def run():
         load_notes(file_name)
     elif command == 'clear':
         clear_notes()
+    elif command == 'edit':
+        index = int(input("Введите индекс заметки для редактирования: "))
+        note = notes[index]
+        note['title'] = input("Введите новый заголовок заметки: ")
+        note['body'] = input("Введите новое тело заметки: ")
+        notes[index] = note
+        print("Заметка успешно отредактирована")        
     else:
         print("Неверная команда. Попробуйте еще раз.")
     run()
